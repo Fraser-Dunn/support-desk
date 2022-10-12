@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaSignInAlt, FaSignOutAlt, FaUser} from "react-icons/fa"
+import {FaSignInAlt, FaUser} from "react-icons/fa"
 import {Link} from "react-router-dom"
 
 const Header = () => {
