@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import Spinner from "../components/Spinner";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -19,12 +20,9 @@ const Register = () => {
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
-   const {
-      user, //isLoading,
-      isError,
-      isSuccess,
-      message,
-   } = useSelector((state) => state.auth);
+   const { user, isLoading, isError, isSuccess, message } = useSelector(
+      (state) => state.auth
+   );
 
    useEffect(() => {
       if (isError) {
@@ -61,6 +59,10 @@ const Register = () => {
          dispatch(register(userData));
       }
    };
+
+   if (isLoading) {
+      return <Spinner />;
+   }
 
    return (
       <>
