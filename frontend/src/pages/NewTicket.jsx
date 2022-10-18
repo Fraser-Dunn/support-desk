@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const NewTicket = () => {
    const { user } = useSelector((state) => state.auth);
-   const [name, setName] = useState(user.name);
+   const [name] = useState(user.name);
    const [email] = useState(user.email);
    const [product, setProduct] = useState("iPhone");
    const [description, setDescription] = useState("");
